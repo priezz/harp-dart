@@ -5,10 +5,13 @@ Features:
 - Live Reload
 - Automatic open in default browser
 - GitHub Pages deploy
-- Breadcrumbs
+- Data load from Google Spreadsheets
 - Google Analytics
+- Breadcrumbs
 - Nested templates
 - Per page styles and scripts
+- Grid layout with Semantic UI
+- Static search (by Swiftype)
 - Ready for use with Google Dart
 
 
