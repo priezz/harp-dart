@@ -1,0 +1,15 @@
+Icon
+Icon?
+.DS_Store
+npm-debug.log
+node_modules/*
+!node_modules/google-routines.coffee
+build/
+web/assets/vendor/*
+web/assets/images/books/*
+web/books/?.jade
+web/books/??.jade
+web/books/???.jade
+web/books/preview/?.jade
+web/books/preview/??.jade
+web/books/preview/???.jade

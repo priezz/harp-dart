@@ -1,0 +1,29 @@
+doctype xml
+//- include _shared/deep
+//- urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+//- 	each val, key in all_posts(public, '/')
+//- 		unless /^\/drafts\//.test(key)
+//- 			url
+//- 				loc #{key}
+
+- var filter = /(\.html$)/
+- var replace = /(\.html$)|(^index\.html$)/
+//- - var replace = /(^index\.html$)/
+- var exclude = ['.git', '_data', 'assets', 'search']
+
+mixin tree(head, tail)
+	for val, key in head
+		if exclude.indexOf(key) == -1
+			if key == '_contents'
+				each file in val
+					if filter.test(file) && !/^404\.html/.test(file)
+						- file = file.replace(replace, "");
+						url
+							loc #{ uri + tail + file }
+							changefreq monthly
+							priority #{ priority || 0.6}
+			else
+				mixin tree(val, tail + key + "/")
+
+urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+	mixin tree(public, "/")

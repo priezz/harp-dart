@@ -1,0 +1,21 @@
+doctype html
+html(lang="ru")
+	include head
+
+	body.graybody
+		.page-wrapper
+			.background-wrapper
+				img(id='background' src="/assets/images/background/#{background ? background : 'background'}.jpg")
+				if backgroundMask
+					#background-mask
+			#top
+			include menu
+			.page-content
+				.ui.grid
+					.two.wide.column
+					.twelve.wide.column.textpage.foto-and-text
+						block content
+					.two.wide.column
+			include footer
+
+		include scripts-bottom

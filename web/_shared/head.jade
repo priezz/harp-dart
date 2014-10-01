@@ -1,0 +1,41 @@
+head
+	//- Semantic UI
+	link( rel="stylesheet" href=vendorPath+"/semantic-ui/build/packaged/css/semantic.min.css" )
+
+	//- Flipster (iTunes like cover flow) - https://github.com/drien/jquery-flipster
+	link( rel="stylesheet" href=vendorPath+"/jquery-flipster/dist/jquery.flipster.min.css" )
+
+	//- Fonts
+	link( src='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic')
+
+	//- custom css
+	link(rel="stylesheet" href=cssPath+"/main.css")
+
+	//- load individual styles defined in _data.json ("styles" property)
+	if styles
+		each style in styles
+			link(rel="stylesheet" href=cssPath+'/'+style+'.css')
+
+	//- Meta
+	meta(charset="utf-8")
+	meta(http-equiv="content-type", content="text/html; charset=utf-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+
+	//- Our site title and description
+	if title
+		title #{title} | #{siteTitle}
+	else
+		if siteTitle
+			title #{siteTitle}
+
+	meta(name="description", content=description || '')
+	meta(name="keywords", content=keywords || '')
+	meta(name="author", content=author || '')
+
+	//- Mobile viewport optimized: h5bp.com/viewport
+	meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+
+	//- Icons
+	link(rel="shortcut icon", href=img+"/favicon.ico")
+
+	include _common/analytics

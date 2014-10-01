@@ -1,0 +1,271 @@
+@import '../../../node_modules/nib'
+
+// https://github.com/corysimmons/typographic
+@import '../../../node_modules/typographic/typographic'
+
+// http://jeet.gs/
+// https://github.com/mojotech/jeet/tree/master/stylus
+@import '../../../node_modules/jeet/stylus/jeet'
+
+// https://github.com/jenius/rupture
+@import '../../../node_modules/rupture/rupture'
+
+// https://github.com/jenius/axis
+@import '../../../node_modules/axis/axis'
+
+// https://github.com/Acquisio/bootstrap-stylus
+// @import '../../../node_modules/bootstrap-stylus/stylus/bootstrap'
+
+html, body
+	height 100%
+
+.ui.grid, .ui.grid .column
+	margin: 0
+
+a, p, ul, li,
+	font-size: 0.9rem
+	font-family: 'Gill Sans', sans-serif
+	font-weight: 100
+
+.ui.image
+	background-color: transparent
+
+body
+	// position absolute
+	width 100%
+	z-index -1000
+
+select, select:-moz-focusring  // disable outline border in FF
+	color: transparent !important
+	color: rgba(0,0,0,0) !important
+	text-shadow: 0 0 0 #000 !important
+a
+	user-focus: none !important;
+a:active, :focus
+	outline: none !important;
+::-moz-focus-inner
+	border 0 !important
+
+
+.graybody
+	margin: auto
+	font-weight: 100
+	font-size: 0.9rem
+	font-family: 'Gill Sans', sans-serif
+	margin: 0px
+	padding: 0px
+	min-height:100%
+
+	.page-wrapper
+		min-height 100%
+		width 100%
+		position absolute
+		top 0
+
+		.background-wrapper, #background-mask
+			z-index: -100
+			background: #634E57
+			position: fixed
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+
+			#background
+				z-index: -200
+				min-width: 100%
+				min-height: 100%
+				position: fixed
+				top: 0
+				left: 0
+
+		.page-content
+			width 100%
+			margin: 40px 0 100px 0
+
+.graybody.modal-open
+	overflow: hidden
+
+/*===============
+	Colors
+=================*/
+@import 'colors'
+
+.background-color-1
+	background-color $yellow
+
+.background-color-2
+	background-color $green
+
+.background-color-3
+	background-color: $red
+
+.background-color-4
+	background-color $red
+
+.background-color-5
+	background-color $magenta
+
+.background-color-9999
+	background-color: $cyan
+
+
+
+
+/*===============
+	LOGO
+=================*/
+#companylogo.ui.horizontal.divider.pagetitle
+	vertical-align: middle
+	text-align: center
+	padding-top: 30px
+	padding-bottom: 0px
+
+	p
+		margin-top: 3px
+		font-family: 'PT Sans', sans-serif
+		font-size: 1.3em
+		font-weight: 400
+		line-height: 1em
+		text-decoration: none
+		color: #E9CE4D
+
+	:after, :before
+		width: 20%
+		border-bottom: 2px dotted #E8CE4D
+		opacity: 0.5
+		margin-left: 200px
+		margin-right: 200px
+
+
+
+/*===========
+	menu
+===========*/
+
+#mainmenu.ui.main.menu
+	position: fixed
+	top: 0
+	width: 100%
+	margin: 0
+	padding: 0
+	border: 0
+	background-color: rgba(255,255,255,0.97)
+	overflow: visible
+	z-index: 200
+
+	.column
+		vertical-align: middle
+
+	.ui.page.grid
+		padding: 0
+
+		a
+			text-align: center
+			color: #000
+			opacity: 0.5
+			text-transform: uppercase
+			font-size: 0.8rem
+			font-family: 'PT Sans', sans-serif
+
+		a:hover
+			opacity: 1.0
+			background: transparent
+
+	/*==================================
+		строка поиска
+	====================================*/
+	form#search-form
+		text-align: right
+
+		input
+			border:none
+			padding: 3px 10px 3px 10px
+			border: 1px solid #adacad
+			border-radius: 20px
+
+
+/*================================
+	для отображения заголовков страниц
+==================================*/
+
+.books-category
+	text-align: left
+	padding: 0
+	border: 0
+	margin-top: 60px
+	margin-bottom: 30px
+	margin-left: 1.5%
+	margin-right: 1.5%
+
+	h3
+		font-size: 1.2rem
+		font-family: "Myriad Set Pro","Lucida Grande","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif"
+		line-height: 1.4545
+		font-weight: 300
+		letter-spacing: 2px
+		color: rgba(255,255,255, 1)
+		opacity: 1.0
+		text-transform: uppercase
+		margin: 0
+		padding: 10px
+
+
+.category-title-background
+	border-radius: 1px
+	width: 100%
+	height: 10px
+	margin: 0
+	padding: 0
+	border: 0
+
+	.category-title-background2
+		border-radius: 2px
+		width: 100%
+		height: 100%
+
+.semitransparent
+	opacity: 0.8
+
+
+/*=================================
+	icon up
+===================================*/
+#upbutton .icon
+	text-decoration: none
+	color: $cyan
+	border-radius 50%
+	margin 0
+	border 1px solid $cyan
+	position:fixed
+	bottom: 35px
+	right:21%
+	font-size 26px
+	line-height 32px
+	width 36px
+	height 36px
+
+
+/*=========
+	footer
+==========*/
+
+.graybody #footer
+	position absolute
+	bottom: 0
+	height 100px
+	width 100%
+
+	.divider
+
+	p
+		font-size: 0.8em
+		margin-bottom: 3px
+		margin-top: 3px
+		font-weight: 100
+		font-family: 'Gill Sans', sans-serif
+		color: #d
+		opacity .7
+
+		tel
+			text-align: right

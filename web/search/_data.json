@@ -1,0 +1,7 @@
+{
+	"index": {
+		"title": "Search results",
+		"styles": ["textpage", "search-results"],
+		"userScripts": ["search-results"]
+	}
+}

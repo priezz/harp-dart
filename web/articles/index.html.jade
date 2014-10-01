@@ -1,0 +1,28 @@
+extends ../_shared/pages
+
+mixin itemInfo( item )
+	if item.title
+		a( href=item.id )
+			h5= item.title
+	if item.image
+		img( src=imgPath+'#{item.id}_#{size}.jpg' )
+	if item.tags
+		each tag in item.tags
+			span #{tag}&nbsp;
+
+
+block content
+	include ../_shared/collections
+
+	//- up
+	a(href="#top" id='upbutton')
+		i.angle.up.icon
+
+	include ../_shared/breadcrumb
+
+	h4= title
+
+	ul
+		each item in articlesList
+			li.wrapper(id='item-'+item.id)
+				+itemInfo( item, 'small' )

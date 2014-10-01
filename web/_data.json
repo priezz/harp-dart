@@ -1,0 +1,11 @@
+{
+	"sitemap": {
+		"layout": false
+	},
+	"index": {
+		"title": "Home",
+		"priority": 0.5,
+		"styles": ["welcome"],
+		"background": "welcome"
+	}
+}

@@ -1,0 +1,23 @@
+mixin breadcrumb(data, url, alterTitle)
+	- title = alterTitle[0].toUpperCase()[0] + alterTitle.slice(1)
+	span(itemscope, itemtype='http://data-vocabulary.org/Breadcrumb')
+	a(href='#{ url }', itemprop='url')
+		if data
+			span.breadcrumb-title(itemprop='title')= data.title || title
+
+.breadcrumb
+	- path = current.path
+	- page = public
+	- url = '/'
+	- title = 'Home'
+	each pathElem, i in path
+		data = page._data['index']
+		+breadcrumb(data, url, title)
+		if i+1 < path.length
+			|  &rsaquo;&nbsp;
+			- url += pathElem+'/'
+		- title = pathElem
+		- page = page[pathElem] || page._data[pathElem]
+	if current.source != 'index'
+		|  &rsaquo;&nbsp;
+		+breadcrumb(page, './'+current.source, current.source)

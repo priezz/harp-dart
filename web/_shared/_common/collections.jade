@@ -1,0 +1,35 @@
+- function getCollection( source, idField ) {
+	- var dest = {};
+	for item in public[source]._data
+		if item[idField]
+			- dest[item[idField]] = item;
+	- return dest;
+- }
+
+- function listToArray( list ) {
+	- var array = [];
+	for item in list
+		- array.push(item);
+	- return array;
+- }
+
+- function arrayToList( array, slugFiels ) {
+	- var list = {};
+	for item, i in array
+		- list[item[slugField]] = array[i];
+	- return array;
+- }
+
+
+- function sortCollection( list, field, direction ) {
+	- var array = listToArray( list )
+	if ['asc', 'desc'].indexOf( direction ) == -1
+		- direction = 'asc'
+	- array = array.sort( function( a, b ){
+		- a = a[field];
+		- b = b[field];
+		- if (direction == 'asc' ) return b<a? 1:b>a?-1:0;
+		- if (direction == 'desc') return b<a?-1:b>a? 1:0;
+	-} );
+	- return arrayToList( array );
+- }

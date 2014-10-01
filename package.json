@@ -1,0 +1,56 @@
+{
+	"name": "app.website.com",
+	"private": true,
+	"version": "0.1.0",
+	"description": "An awesome description",
+	"homepage": "http://app.website.com",
+	"author": "It's Me <me@me.me> (http://me.me)",
+	"maintainers": [
+    "It's Me <me@me.me> (http://me.me)"
+  ],
+	"contributors": [
+    "It's Me <me@me.me> (http://me.me)"
+  ],
+	"bugs": {
+		"url": "https://github.com/author/project/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/author/project.git"
+	},
+	"engines": {
+		"node": "0.10.x",
+		"npm": "1.4.x"
+	},
+	"dependencies": {
+		"axis": "^0.2.2",
+		"bootstrap-stylus": "git://github.com/Acquisio/bootstrap-stylus",
+		"google-sheets": "0.0.4",
+		"jeet": "^6.1.2",
+		"nib": "^1.0.3",
+		"rupture": "^0.4.0",
+		"typographic": "^0.1.0",
+		"underscore": "^1.7.0"
+	},
+	"devDependencies": {
+		"browser-sync": "^1.3.7",
+		"coffeeify": "^0.7.0",
+		"watchify": "^1.0.2"
+	},
+	"main": "node_modules/harp/bin/harp",
+	"scripts": {
+		"preinstall": "npm install -g browser-sync ; npm install -g coffee-script ; npm install -g harp ; npm install -g bower",
+		"postinstall": "bower update ; npm run img-convert",
+		"compile": "NODE_ENV=production harp compile web -o /tmp/harp/fortuna-al.com",
+		"build ": "npm run compile",
+		"deploy": "tools/deploy.sh",
+		"build-js ": "browserify -t coffeeify public/app.coffee -o public/bundle.js",
+		"browserify": "watchify -t coffeeify public/app.coffee -o public/bundle.js -dv",
+		"load-google": "coffee tools/load-data-from-google.coffee",
+		"watch": "browser-sync start --config .config/bs-config.js",
+		"start-server": "NODE_ENV=development harp server web",
+		"start": "npm run load-resources ; npm run start-server & npm run watch",
+		"img-convert": "tools/img-convert.sh",
+		"build-resources": "npm run load-google && npm run img-convert"
+	}
+}

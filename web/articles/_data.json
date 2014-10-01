@@ -1,0 +1,25 @@
+{
+	"1": {
+		"id": "1",
+		"title": "Article 1",
+		"rating": "4",
+		"year": "2012",
+		"tags": ["tag1", "tag2"],
+		"styles": ["article", "textpage"]
+	},
+	"2": {
+		"id": "2",
+		"title": "Article 2",
+		"rating": "9",
+		"year": "2014",
+		"tags": ["tag1", "tag3", "tag4"],
+		"styles": ["article", "textpage"]
+	},
+	"index": {
+		"title": "My articles",
+		"priority": 1,
+		"styles": ["textpage"],
+		"vendorScripts": [],
+		"userScripts": []
+	}
+}

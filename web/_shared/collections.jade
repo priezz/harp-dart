@@ -1,0 +1,5 @@
+include _common/collections.jade
+
+- var articlesList = getCollection( 'articles', 'id' )
+//- sort direction - asc, desc
+- articlesList = sortCollection(articlesList, 'year', 'asc')

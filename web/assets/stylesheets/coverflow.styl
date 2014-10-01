@@ -1,0 +1,104 @@
+
+@import 'colors'
+
+
+/*==========================
+	Series Coverflow
+============================*/
+
+.row.coverflow#series-coverflow
+	margin: 0 !important
+	padding: 0 !important
+	padding-top: 50px !important
+	display: none // to be shown after the js element is loaded
+
+	.flipster
+		.button.block
+			padding: 0
+			margin: 0
+			width: 100%
+			height: 180px
+			border-radius: 6px
+			// box-shadow: 0px 0px 100px 10px #2B2B2B
+			box-shadow: 0px 0px 30px 2px #403E3F
+			border: 1px solid rgb(27, 27, 29)
+
+		.flip-item
+			width: 530px
+
+		.flip-content
+			width: 100%
+
+/*
+		 icons: prev, next
+*/
+		$iconsPadding = 190px
+		$iconsSize = 32px
+		.flipto-prev, .flipto-next
+			position absolute
+			font-size: 0
+			color: rgba(255,255,255,0.9)
+			bottom 15px
+
+		.flipto-prev
+			right 50%
+			padding-right $iconsPadding
+		.flipto-next
+			left 50%
+			padding-left $iconsPadding
+
+		.flipto-prev:before, .flipto-next:before
+			display block
+			text-decoration: none
+			border-radius 50%
+			margin 0
+			color: #444
+			border 1px solid #444
+			width $iconsSize
+			height $iconsSize
+			font-family Icons
+			font-weight 100
+			font-size 26px
+			line-height 32px
+			text-align center
+			vertical-align middle
+			opacity .5
+		.flipto-prev:before
+			content: '\f104 '
+		.flipto-next:before
+			content: ' \f105'
+		.flipto-prev:hover:before, .flipto-next:hover:before
+			opacity .8
+			border 2px solid $cyan
+
+		.button
+			display: inline-block
+			padding: 20px
+			margin: 0
+			background-position: center center
+			background-repeat: no-repeat
+			text-shadow: none
+			vertical-align: middle
+			cursor: pointer
+			border: 0
+			transition: color 500ms ease, background-color 500ms ease
+
+
+		a, a h1, a p
+			font-family: 'PT Sans', sans-serif
+			font-size: 1.35rem
+			font-weight: 100
+			text-decoration: none
+			text-transform: uppercase
+			text-align: center
+			margin: 0
+
+
+		a h1
+			padding-top: 20px
+			color: #fff
+
+		a p
+			color: #222224
+			font-size: 1.1rem
+			padding-top: 1.5rem

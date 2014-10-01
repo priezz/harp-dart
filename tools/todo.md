@@ -1,0 +1,3 @@
+- rss - books list with prices
+- _data.js - получение динамических данных https://gist.github.com/sgoumaz/6792873
+- disqus - http://harpjs.com/recipes/blog-post-comments

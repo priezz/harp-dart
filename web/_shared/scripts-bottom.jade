@@ -1,0 +1,23 @@
+//- include analytics
+
+//- jQuery
+script(src=vendorPath+"/jquery/dist/jquery.min.js")
+
+//- Semantic UI
+//- script( src=vendorPath+"/semantic-ui/build/packaged/javascript/semantic.min.js" )
+
+//- Swiftype Search
+script( src=vendorPath+"/swiftype-search-jquery/jquery.swiftype.search.js" )
+script( src=vendorPath+"/swiftype-search-jquery/jquery.ba-hashchange.min.js" )
+script( src=jsPath+'/search.js' )
+
+
+//- load individual vendor scripts defined in _data.json ("vendorScripts" property)
+if vendorScripts
+	each script in vendorScripts
+		script( src=vendorPath+'/'+script+'.js' )
+
+//- load individual user scripts defined in _data.json ("userScripts" property)
+if userScripts
+	each script in userScripts
+		script( src=jsPath+'/'+script+'.js' )
